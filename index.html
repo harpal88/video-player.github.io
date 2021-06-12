@@ -5,413 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript">// DOM Loaded
-        // DOM Loaded
-        document.addEventListener("DOMContentLoaded", () => {
-          const player = new Plyr("#player", {
-            title: "Spring",
-            controls: [
-              "play-large",
-              "play",
-              "progress",
-              "current-time",
-              "duration",
-              "mute",
-              "volume",
-              "settings",
-              "pip",
-              "airplay",
-              "fullscreen"
-            ]
-          });
-        
-          document.querySelectorAll(".accordion").forEach((acc) => {
-            acc.addEventListener("click", () => {
-              acc.classList.toggle("is-active");
-              let panel = acc.nextElementSibling;
-              panel.style.maxHeight
-                ? (panel.style.maxHeight = null)
-                : (panel.style.maxHeight = panel.scrollHeight + "px");
-            });
-          });
-        
-          document.querySelector(".nav-toggle").addEventListener("click", (e) => {
-            e.currentTarget.classList.contains("is-active")
-              ? (e.currentTarget.innerHTML = "Show navigation")
-              : (e.currentTarget.innerHTML = "Hide navigation");
-        
-            e.currentTarget.classList.toggle("is-active");
-        
-            document.querySelector("#videoColumn").classList.toggle("is-full");
-            document.querySelector("#navColumn").classList.toggle("is-active");
-          });
-        
-          document.querySelectorAll(".go-to").forEach((btn) => {
-            btn.addEventListener("click", () => {
-              player.currentTime = parseInt(btn.getAttribute("data-time"));
-              player.play();
-            });
-          });
-        });
-        
-        </script>
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="video.css">
+
 </head>
-
-
 <body>
-    <main>
-        <section>
-          <div class="lx-container-80">
-            <div class="lx-row">
-              <div id="videoColumn" class="lx-column is-8 is-flex">
-                <div class="lx-row">
-                  <div class="video-header">
-                    <h1>Spring</h1>
-                    <a class="nav-toggle text-small is-active">Hide navigation</a>
-                  </div>
-                  <!-- example of how to use with the HTML5 <video> tag -->
-                  <video id="player" playsinline controls>
-                    <source src="https://media.istockphoto.com/videos/linear-icon-customer-review-rating-happy-emoticon-quality-line-flat-video-id1314159618" type="video/webm" />
-                    <track kind="captions" label="English" src="path/video-en.vtt" srclang="en" default />
-                  </video>
-                  <div class="lx-card">
-                    <a class="accordion">Description</a>
-                    <div class="panel">
-                      <p>Spring is the latest short film produced by Blender Animation Studio. Made in
-                        Blender 2.8. Get the production files, assets and exclusive making-of videos by
-                        joining Blender Cloud at <a href="https://cloud.blender.org" target="_blank" rel="noopener noreferrer">https://cloud.blender.org</a>
-                      </p>
-                      <p>Spring is the story of a shepherd girl and her dog, who face ancient spirits in
-                        order to continue the cycle of life. This poetic and visually stunning short
-                        film was written and directed by Andy Goralczyk, inspired by his childhood in
-                        the mountains of Germany.
-                      </p>
-                      <p>The Spring team used the development version of Blender 2.80 for the entire
-                        production, before the software was in official Beta even. As for all of
-                        Blender’s Open Movies, the entire production process and all its source files
-                        are being shared on the production platform Blender Cloud.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="navColumn" class="lx-column is-active">
-                <div class="lx-row">
-                  <div class="lx-card">
+    
+    <div class="video-container">
+  <video src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/r8114KN4ip5pxqaw/videoblocks-texture-of-bouncing-balls-on-a-white-background-abstract-background-for-business-presentation_bxsbeeaju__69dfaf19cfa7e49763e0e3a445f2bf3f__P360.mp4" id="video" class="video" width="700"></video>
+  
+  
+  <svg id="chat" style="width: 20pc;height:auto;position: absolute;left: 28%;"  id="Capa_1" enable-background="new 0 0 511.072 511.072" height="612" viewBox="0 0 511.072 511.072" width="512" xmlns="http://www.w3.org/2000/svg"><g id="Speech_Bubble_48_"><g>		<text xml:space="preserve" font-family="Concert One" font-size="26" font-style="normal" font-weight="300" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(2,2,2); fill-rule: nonzero; opacity: 1; white-space: pre;" >
+      <tspan x="120" y="120" >Lorem ipsum dolor sit amet,</tspan>
+      <tspan x="110" y="160" >consectetur adipiscing elit, sed</tspan>
+      <tspan x="100" y="200" >do eiusmod tempor incididunt ut</tspan>
+      <tspan x="100" y="240" >labore et dolore magna aliqua.</tspan>
+      <tspan x="100" y="280" >Ut enim ad minim veniam, quis</tspan>
+      <tspan x="100" y="320" >nostrud exercitation</tspan></text>
+    <path d="m74.39 480.536h-36.213l25.607-25.607c13.807-13.807 22.429-31.765 24.747-51.246-36.029-23.644-62.375-54.751-76.478-90.425-14.093-35.647-15.864-74.888-5.121-113.482 12.89-46.309 43.123-88.518 85.128-118.853 45.646-32.963 102.47-50.387 164.33-50.387 77.927 0 143.611 22.389 189.948 64.745 41.744 38.159 64.734 89.63 64.734 144.933 0 26.868-5.471 53.011-16.26 77.703-11.165 25.551-27.514 48.302-48.593 67.619-46.399 42.523-112.042 65-189.83 65-28.877 0-59.01-3.855-85.913-10.929-25.465 26.123-59.972 40.929-96.086 40.929zm182-420c-124.039 0-200.15 73.973-220.557 147.285-19.284 69.28 9.143 134.743 76.043 175.115l7.475 4.511-.23 8.727c-.456 17.274-4.574 33.912-11.945 48.952 17.949-6.073 34.236-17.083 46.99-32.151l6.342-7.493 9.405 2.813c26.393 7.894 57.104 12.241 86.477 12.241 154.372 0 224.682-93.473 224.682-180.322 0-46.776-19.524-90.384-54.976-122.79-40.713-37.216-99.397-56.888-169.706-56.888z"/></g></g></svg> 
+    
+    
+    <svg style="width: 2pc;position: absolute;right: 0;top: 0;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share-alt-square" class="svg-inline--fa fa-share-alt-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 80v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48zM304 296c-14.562 0-27.823 5.561-37.783 14.671l-67.958-40.775a56.339 56.339 0 0 0 0-27.793l67.958-40.775C276.177 210.439 289.438 216 304 216c30.928 0 56-25.072 56-56s-25.072-56-56-56-56 25.072-56 56c0 4.797.605 9.453 1.74 13.897l-67.958 40.775C171.823 205.561 158.562 200 144 200c-30.928 0-56 25.072-56 56s25.072 56 56 56c14.562 0 27.823-5.561 37.783-14.671l67.958 40.775a56.088 56.088 0 0 0-1.74 13.897c0 30.928 25.072 56 56 56s56-25.072 56-56C360 321.072 334.928 296 304 296z"></path></svg>
+  
+  <div class="video-controls video-controls-visibility--visible">
+    <button class="control-item play-and-pause-video fa fa-play" title="Play or Pause"></button>
+    <button id="btn" style="display: none;position: absolute;top: -180px;" >
       
-                    <div class="accordions">
-                      <a class="accordion">Start of the journey</a>
-                      <div class="panel">
-                        <a class="go-to" data-time="15">
-                          <i class="fas fa-external-link-alt"></i>
-                          <p>Go to this part</p>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat.
-                        </p>
-                      </div>
-                      <a class="accordion">The call to adventure</a>
-                      <div class="panel">
-                        <a class="go-to" data-time="65">
-                          <i class="fas fa-external-link-alt"></i>
-                          <p>Go to this part</p>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat.
-                        </p>
-                      </div>
-                      <a class="accordion">Meeting the mentor</a>
-                      <div class="panel">
-                        <a class="go-to" data-time="115">
-                          <i class="fas fa-external-link-alt"></i>
-                          <p>Go to this part</p>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="lx-card">
-                    <div class="title">
-                      <h2>Frequently Asked Questions</h2>
-                    </div>
-                    <div class="accordions">
-                      <a class="accordion">Lorem ipsum dolor sit amet?</a>
-                      <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat.
-                        </p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                      </div>
-                      <a class="accordion">Lorem ipsum dolor sit amet?</a>
-                      <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat.
-                        </p>
-                      </div>
-                      <a class="accordion">Lorem ipsum dolor sit amet?</a>
-                      <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-  <style>
-      :root {
-  --plyr-color-main: #009227;
-}
+      <svg style="width: 4rem;height: auto;" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m512 256c0 68.378906-26.628906 132.667969-74.980469 181.019531-48.351562 48.351563-112.640625 74.980469-181.019531 74.980469s-132.667969-26.628906-181.019531-74.980469c-48.351563-48.351562-74.980469-112.640625-74.980469-181.019531h40c0 119.101562 96.898438 216 216 216s216-96.898438 216-216-96.898438-216-216-216c-77.902344 0-148.230469 41.144531-186.570312 107h60.570312v40h-130v-130h40v61.492188c18.472656-29.011719 42.675781-54.09375 71.480469-73.828126 42.65625-29.21875 92.628906-44.664062 144.519531-44.664062 68.378906 0 132.667969 26.628906 181.019531 74.980469 48.351563 48.351562 74.980469 112.640625 74.980469 181.019531zm-150.027344.566406-169.972656 98.21875v-196.441406zm-129.972656 28.910156 50.027344-28.910156-50.027344-28.910156zm0 0"/></svg></button>
+    <div class="progress-video-container">
+      <input type="range" class="control-item progress-video" min="0.0" value="0.00" step="any" max="100.00">
+      <span class="progress-time time-video">00:00</span>
+      <span class="duration-time time-video">00:00</span>
+    </div>
+    <div class="audio-video-container">
+      <button class="control-item volume-video fa fa-volume-up" title="Volume"></button>
+      <input type="range" class="control-item slide-volume-video" min="0" value="1" step="any" max="1">
+    </div>
+    <button class="control-item fullscreen-video fa fa-expand"></button>
+  </div>
+</div>
 
-html,
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 100%;
-  font-weight: 400;
-  line-height: 1.65;
-  color: white;
-  background-color: #111212;
-  background-image: url("https://i.postimg.cc/fbSXnBct/video.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: soft-light;
-}
+    <script src="video.js"></script>
 
-small,
-.text-small {
-  font-size: 0.8em;
-}
 
-.plyr--video {
-  width: 100%;
-  border-radius: 0.64em;
-  box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(0, 0, 0, 0.2);
-}
 
-.plyr__poster {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: top center;
-}
-
-main {
-  width: 100%;
-  height: 100%;
-  padding: 1rem 0 4rem 0;
-  overflow-x: hidden;
-  position: relative;
-  display: flex;
-}
-main section {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main section .lx-container-80 .lx-row {
-  align-items: flex-start;
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .video-header {
-  width: 100%;
-  margin: 0 0 1.05rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .video-header h1 {
-  margin: 0;
-  line-height: normal;
-  font-size: 1.953em;
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .video-header .nav-toggle {
-  padding: 0.5rem;
-  border-radius: 0.64em;
-  box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(0, 0, 0, 0.2);
-  background-color: #1e2020;
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .lx-card {
-  width: 100%;
-  margin: 1rem 0 0 0;
-  padding: 0;
-  display: flex;
-  flex-flow: wrap column;
-  overflow: hidden;
-  border: none;
-  background-color: #1e2020;
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .lx-card .accordion {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  position: relative;
-  border-radius: 0;
-  border: none;
-  text-align: left;
-  font-size: 1.563em;
-  background-color: #2b2e2e;
-  transition: 0.3s;
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .lx-card .accordion:after {
-  content: "";
-  width: 0.5rem;
-  height: 0.5rem;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  position: absolute;
-  top: 50%;
-  left: 95%;
-  border-right: 0.125rem solid #009227;
-  border-bottom: 0.125rem solid #009227;
-  transition: 0.4s;
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .lx-card .accordion.is-active:after {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-main section .lx-container-80 .lx-row #videoColumn .lx-row .lx-card .panel {
-  max-height: 0;
-  padding: 0 1rem;
-  overflow: hidden;
-  font-size: 0.75em;
-  transition: max-height 0.5s;
-}
-main section .lx-container-80 .lx-row #videoColumn.is-full {
-  width: 100%;
-}
-main section .lx-container-80 .lx-row #navColumn {
-  display: none;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card {
-  width: 100%;
-  margin: 0 0 1em 0;
-  padding: 0;
-  overflow: hidden;
-  border: none;
-  background-color: #1e2020;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .title {
-  padding: 0.8em 1em;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .title h2 {
-  width: 100%;
-  margin: 0 0 0.5rem 0;
-  line-height: normal;
-  text-align: left;
-  font-size: 1.563em;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .title p {
-  margin: 0;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions {
-  display: flex;
-  flex-flow: wrap column;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .accordion {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  position: relative;
-  border-radius: 0;
-  border: none;
-  text-align: left;
-  font-size: 0.8em;
-  background-color: #2b2e2e;
-  transition: 0.3s;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .accordion:after {
-  content: "";
-  width: 0.5em;
-  height: 0.5em;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  position: absolute;
-  top: 50%;
-  left: 95%;
-  border-right: 0.125rem solid #009227;
-  border-bottom: 0.125rem solid #009227;
-  transition: 0.4s;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .accordion.is-active:after {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .panel {
-  max-height: 0;
-  padding: 0 1rem;
-  overflow: hidden;
-  font-size: 0.75em;
-  transition: max-height 0.5s;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .panel .go-to {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .panel .go-to img,
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .panel .go-to svg,
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .panel .go-to i {
-  height: 1.5em;
-  margin: 0 0.5rem 0 0;
-  color: #009227;
-  object-fit: contain;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card .accordions .panel .go-to p {
-  flex-grow: 1;
-}
-main section .lx-container-80 .lx-row #navColumn .lx-row .lx-card:last-child {
-  margin: 0;
-}
-main section .lx-container-80 .lx-row #navColumn.is-active {
-  display: block;
-}
-
-@media screen and (max-width: 64rem) {
-  main section .lx-container-80 .lx-row .lx-column {
-    padding: 0;
-  }
-  main section .lx-container-80 .lx-row #videoColumn {
-    width: 100%;
-  }
-  main section .lx-container-80 .lx-row #videoColumn .lx-row .video-header .nav-toggle {
-    display: none;
-  }
-  main section .lx-container-80 .lx-row #videoColumn .lx-row .lx-card {
-    margin: 1rem 0;
-  }
-  main section .lx-container-80 .lx-row #navColumn {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 31.25rem) {
-  html,
-body {
-    font-size: 95%;
-  }
-}
-@media screen and (max-width: 22.5rem) {
-  html,
-body {
-    font-size: 90%;
-  }
-}
-  </style>
-</body>  
-
+</body>
 </html>
+
+
+
+
+
