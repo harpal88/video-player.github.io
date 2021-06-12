@@ -16,7 +16,7 @@ function progressVideo() {
     var autoProgress = $VIDEO.currentTime ,
         $progressBar = document.querySelector('.progress-video'),
         $progressTime = document.querySelector('.progress-time');
-    $progressBar.value = autoProgress.toFixed(0);
+    $progressBar.value = autoProgress.toFixed(0.5);
     $progressBar.setAttribute('max', $VIDEO.duration);
 
     $progressTime.innerHTML = transformVideoDuration(autoProgress);
